@@ -1,0 +1,37 @@
+#in order to print the version of numpy
+import numpy as np
+print(np.version) 
+
+#creating 1D array
+import numpy as np
+a = np.arange(10)
+print(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import numpy as np
+a = np.array([1,2,3])
+b = np.r_[(np.repeat(a,3), np.tile(a,3)]
+print(b)
+#[1,1,1,2,2,2,3,3,3,1,2,3,1,2,3,1,2,3]
