@@ -1,0 +1,210 @@
+NUMPY:
+numpy is a module or library in python it is used in scientific computing
+it contains powerfull n-dimensional array object and tools to integrate with c and c++ and it also useful in linear algebra, corier transform,
+and random number capabilities.
+numpy can also be used efficient multidimensional container for data, generic data
+
+multidimensional array:
+two dimensional array:: which conatins rows and columns as well.
+
+
+first we need to install numpy module.
+
+import numpy as np
+a=np.array([1,2,3])
+print(a)
+
+import numpy as np
+a=np.array([(1,2,3), (4,5,6)])
+print(a)
+
+o/p : [[1,2,3]
+         [4,5,6]]
+
+the three main that we use numpy:
+
+1.it occupyies very less memeory when it compares to list
+2.and it is very fast interms of execution when compared to list
+3. and at the same time it is very convient to wor with numpy
+
+1st condition proving:
+
+import numpy
+import time
+import sys
+s=range(1000)
+print(sys.getsizeof(s)*len(5))
+D=np.range(1000)
+print(D.size*D.itemsize)
+
+import numpy as np
+import time
+import sys
+size=1000
+l1 = range(5718)
+l2=range(5718)
+A1=np.arrange(size)
+A2=np.arrange(size)
+start = time.time()
+result = [(x,y) for x,y in zip(l1,l2)]
+start = time.time()
+result = A1+A2
+print((time.time()-start)*1000)
+
+Numpy operations
+
+1. we can find the dimension of the array.
+2. find the bytesize of each element in the array
+3. we can find the datatypes of the elements which stores in the array.
+4.  find the size of an array.(howmany elements present in array)
+5.we can find the shape of an array it means how many rows and columns in the array Ex: suppose 3 rows, 4 columns table
+(multidimesional array) we can find it
+6. we can do reshape(changing the elements in the array)
+7. we can do slicing
+8. we can find minmum, maximum, sum of the arrays
+9. axis means 8    9                  sum of axis 0:[30,33]
+                   10  11                 sum of axis 1: [17,21,25]
+                   12  13    here the rows are called axis-1 and columns are called axis-0. usage of these is suppose of u want to calcaluate som of all the rows then u can use axis and do that
+10. findinrg the squareroot
+11. finding the standard deviation
+12. mathematical operation amoung different arrays
+
+
+numpy spaecial functions
+sine,cosine function it requires for this we need to use matlabplot lib actually it gives graph represatation based on the array
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0,3*np.pi, 0.1)
+
+y = np.sin(x)
+plt.plot(x,y)
+plt.show()
+
+
+13. exponential function, logarithimic function
+import numpy as np
+import matplotlib.pyplot as plt
+ar = np.array([1,2,3])
+print(np.exp(ar))
+print(np.log(ar))
+print(np.log10(ar))
+
+
+
+
+1st solution:
+
+import numpy as np
+
+a=np.array([{1,2,3},{2,3,4,}]) -----> if u want to know dimensions
+print(a.edim)
+# if u want to the byte size
+import numpy as np
+
+a = np.array([1,2,3])
+
+print(a.itemsize)
+
+# if u want to know the datatype
+
+import numpy as np
+
+a = np.array([1,2,3])
+
+print(a.dtype)
+
+# find the size of an array
+import numpy as np
+
+a = np.array([1,2,3])
+
+print(a.size)
+#shape of the array
+import numpy as np
+
+a = np.array([1,2,3])
+
+print(a.shape)
+
+o/p: (3,)
+
+#we can do reshape(changing the elements in the array)
+import numpy as np
+a= np.array([(1,2,3,4),(3,4,5,6)])
+a=a.reshape(4,2)   # it means 4 rows and 2 cols
+print(a)
+
+
+#slicing
+
+import numpy as np
+
+a = np.array([(1,2,3,4),(3,4,5,6),(7,8,9,10])
+print(a[0,2])  # it means from 0th index 2elemnt needs to be print
+print(a[0:,3])  #[4,6]
+print(a[0:2,3])  #[4,6]
+
+
+#
+import numpy as np
+a=np.linspace(1,3,5)   
+print(a)            # it gives 5 different values between 1 and 3
+o/p [1. 1.5 2. 2.5 3]
+
+
+# finding the min, max,sum of the arrays
+
+import numpy as np
+
+a=np.array([1,2,3])
+
+print(a.sum()) # we can just mention the function over here
+
+
+
+# if you want to find sum of axis-0 then u can go ahead
+
+import numpy as np
+a = np.array([(1,2,3),(3,4,5)])
+print(a.sum(axis=0)) # (4,6,8)
+print(a.sum(axis=1)) #(6,12)
+
+
+
+# sqrt,standard deviation
+import numpy as np
+a = np.array([(1,2,3),(3,4,5)])
+print(np.sqrt(a))  # we will get sqaure root of each elemnt
+print(np.std(a))  #std means how much each elemnt varries from the mean value of my numpy array)
+
+
+# mathematical operations element vice(matrix multiplications,division,additon,substraction)
+
+import numpy as np
+a = np.array([(1,2,3),(4,5,6)])
+b = np.array([(1,2,3),(3,4,5)])
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+
+o/p: [[2 4 6]
+         [6 8 10]]
+
+
+##vertical stacking, horizontalstacking
+
+import numpy as np
+a = np.array([(1,2,3),(4,5,6)])
+b = np.array([(1,2,3),(3,4,5)])
+print(np.vstack(a,b))
+print(np.hstack(a,b))
+
+
+# if you want to make one particular array in aingle column how can we do means
+
+import numpy as np
+a=np.array([(1,2,3),(4,5,6)])
+print(a.ravel())   #[1,2,3,4,5,6]
